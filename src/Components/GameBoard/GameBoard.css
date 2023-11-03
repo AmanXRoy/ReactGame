@@ -1,0 +1,39 @@
+@import url("../../theme.css");
+
+.gameboard-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 256px);
+  margin-top: 40px;
+}
+
+.gameboard-wrapper .cta-wrapper > .btn {
+  width: 175px;
+  height: 175px;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.gameboard-wrapper .cta-wrapper .btn.paper-btn {
+    border: 25px solid var(--paperGradient);
+    top: 10px;
+    left: 30%;
+  }
+  
+  .gameboard-wrapper .cta-wrapper .btn.scissors-btn {
+    border: 25px solid var(--scissorsGradient);
+    top: 10px;
+    right: 30%;
+  }
+
+.gameboard-wrapper .cta-wrapper .btn.rock-btn {
+  border: 25px solid rgb(220, 46, 78);
+  bottom: 50px;
+  left: 42%;
+}
+
+

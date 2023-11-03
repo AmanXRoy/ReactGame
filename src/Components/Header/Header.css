@@ -1,0 +1,36 @@
+@import url('../../theme.css');
+
+.header-wrapper{
+    padding: 32px 28px;
+    border: 2px solid var(--HeaderOutline);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-wrapper .score-card{
+    width: 150px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.header-wrapper .score-card .score-title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: var(--scoreText);
+}
+
+.header-wrapper .score-card .score{
+    font-size: 44px;
+    color: var(--darkText);
+    font-weight: 700;
+}
+

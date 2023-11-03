@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+:root {
+  --backgroundGradient: radial-gradient(#1f3756, #141539);
+  --darkText: hsl(229, 25%, 31%);
+  --scoreText: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+  --scissorsGradient:#ed9f0d;
+  --paperGradient: #4764f5;
+  --RockGradient: radial-gradient(rgb(220, 46, 78)hsl(349, 70%, 56%));
+  --LizardGradient: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --CyanGradient: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+}
+
+
+
