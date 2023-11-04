@@ -1,0 +1,41 @@
+@import url('../../theme.css');
+
+
+.rules-box-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgb(0, 0, 0, 0.4);
+
+}
+.rules-box{
+    background-color: #fff;
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+
+
+.rules-box .model-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+
+.rules-box .model-header .close-model{
+    all: unset;
+    padding: 12px;
+    cursor: pointer;
+}
+.rules-box .model-header .title{
+    color: var(--darkText);
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+

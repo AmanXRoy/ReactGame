@@ -4,7 +4,8 @@
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
-  height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 #root {
@@ -13,7 +14,8 @@
 }
 
 .game-wrapper {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-wrapper .rules-cta {
@@ -25,4 +27,7 @@
   padding: 8px 32px;
   font-size: 16px;
   border-radius: 4px;
+  align-self: flex-end;
+  margin-right: 20px;
+  cursor: pointer;
 }

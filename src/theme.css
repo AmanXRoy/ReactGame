@@ -6,7 +6,7 @@
   --HeaderOutline: hsl(217, 16%, 45%);
   --scissorsGradient:#ed9f0d;
   --paperGradient: #4764f5;
-  --RockGradient: radial-gradient(rgb(220, 46, 78)hsl(349, 70%, 56%));
+  --RockGradient: #dc2e4e;
   --LizardGradient: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
   --CyanGradient: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
 }
