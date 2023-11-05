@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import './Header.css'
 import headerLogo from '../../Assets/logo.svg';
-function Header() {
+function Header({score}) {
 
-    const [score, setScore] = useState(0);
   return (
     <div className="header-wrapper">
         <div className="logo-wrapper">
