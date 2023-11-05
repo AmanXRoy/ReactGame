@@ -5,9 +5,12 @@ import paperSvg from "../../Assets/icon-paper.svg";
 import scissorsSvg from "../../Assets/icon-scissors.svg";
 import triangleSvg from "../../Assets/bg-triangle.svg";
 import PlayArea from "../PlayArea/PlayArea";
+import Header from "../../Components/Header/Header";
+
 function GameBoard({ stateHandler }) {
   let [userOption, setUserOption] = useState("");
   let [initialState, setInitialState] = useState(true);
+  let [score, setScore] = useState(0);
   let pRef = useRef(null);
   let sRef = useRef(null);
   let rRef = useRef(null);
@@ -17,8 +20,11 @@ function GameBoard({ stateHandler }) {
       setInitialState(false);
     }
   }, [userOption]);
+
+
   return (
     <>
+      <Header score={score} />
       {initialState ? (
         <div className="gameboard-wrapper">
           <div className="cta-wrapper">
@@ -26,6 +32,7 @@ function GameBoard({ stateHandler }) {
               className="btn paper-btn"
               data-id={"paper"}
               onClick={() => {
+
                 setUserOption(pRef.current.getAttribute("data-id"));
               }}
               ref={pRef}
@@ -37,6 +44,7 @@ function GameBoard({ stateHandler }) {
               data-id={"scissors"}
               ref={sRef}
               onClick={() => {
+
                 setUserOption(sRef.current.getAttribute("data-id"));
               }}
             >
@@ -47,6 +55,7 @@ function GameBoard({ stateHandler }) {
               data-id={"rock"}
               ref={rRef}
               onClick={() => {
+
                 setUserOption(rRef.current.getAttribute("data-id"));
               }}
             >
@@ -56,7 +65,13 @@ function GameBoard({ stateHandler }) {
           </div>
         </div>
       ) : (
-        <PlayArea userOption={userOption} />
+        <PlayArea
+          userOption={userOption}
+          setScore={setScore}
+          setInitialState={setInitialState}
+          setUserOption={setUserOption}
+          score={score}
+        />
       )}
     </>
   );
