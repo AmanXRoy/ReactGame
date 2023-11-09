@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import GameBoard from "./Components/GameBoard/GameBoard";
 import RulesBox from "./Components/RulesBox/RulesBox";
+import { useDispatch } from "react-redux";
+import {showRules} from './State/reducer/reducer'
 
 function App() {
-  let [modelState, setModelState] = useState(false);
+  const disPatch = useDispatch()
 
   return (
     <div className="game-wrapper">
@@ -14,12 +16,12 @@ function App() {
       <button
         className="rules-cta"
         onClick={() => {
-          setModelState(true);
+          disPatch(showRules(true));
         }}
       >
         Rules
       </button>
-      <RulesBox modelState={modelState} stateChange={setModelState} />
+      <RulesBox/>
     </div>
   );
 }

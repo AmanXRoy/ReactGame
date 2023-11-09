@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./RulesBox.css";
 import rulesSVG from "../../Assets/image-rules.svg";
 import closeSvg from "../../Assets/icon-close.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { showRules } from "../../State/reducer/reducer";
 
-function RulesBox({ modelState, stateChange }) {
+function RulesBox() {
+
+  const isRules = useSelector(state => state.isRules);
+  const disPatch = useDispatch()
   return (
     <div
       className="rules-box-overlay"
-      style={modelState ? { display: "block" } : { display: "none" }}
+      style={isRules ? { display: "block" } : { display: "none" }}
     >
       <div className="rules-box">
         <div className="model-header">
@@ -15,7 +20,7 @@ function RulesBox({ modelState, stateChange }) {
           <button
             className="close-model"
             onClick={() => {
-              stateChange(false);
+              disPatch(showRules(false));
             }}
           >
             <img src={closeSvg} alt="close" />

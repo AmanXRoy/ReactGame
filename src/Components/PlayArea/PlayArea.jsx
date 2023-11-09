@@ -1,102 +1,42 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./PlayArea.css";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateResult, playAgain } from '../../State/reducer/reducer';
+import Confetti from "react-confetti";
+function PlayArea() {
+  const disPatch = useDispatch();
 
-let computerOption = ["rock", "paper", "scissors"];
-let resultMsg = "";
+  const { userChoice, computerChoice, isResult, userWin, isDraw } = useSelector(state => state);
 
-function PlayArea({
-  userOption,
-  setScore,
-  setInitialState,
-  setUserOption,
-  score,
-}) {
-  let computerChoice = useRef(null);
-  let [userClass, setClassName] = useState("user-choice");
-  let [computerClass, setComputerChoiceClassName] = useState("computer-choice");
-  let [showResult, setShowResult] = useState(false);
-
-  const generateComputerOption = () => {
-    let randomIndex = Math.round(Math.random() * (computerOption.length - 1));
-    return computerOption[randomIndex];
+  const winnerRing = {
+    boxShadow: '0 0 0px 50px rgba(0,0,0,0.1), 0 0 0 100px rgba(0,0,0,0.1), 0 0 0 150px rgba(0,0,0,0.1)'
   };
 
-  const calculateResult = (userOption, computerOption) => {
-    if (userOption === "rock") {
-      if (computerOption === "scissors") {
-        setComputerChoiceClassName("computer-choice selected scissors-choice");
-        resultMsg = "You Win";
-        setShowResult(true);
-      } else if (computerOption === "rock") {
-        setComputerChoiceClassName("computer-choice selected rock-choice");
-        resultMsg = "Draw";
-        setShowResult(true);
-      } else {
-        setComputerChoiceClassName("computer-choice selected paper-choice");
-        resultMsg = "You Lose";
-        setShowResult(true);
-      }
-    } else if (userOption === "paper") {
-      if (computerOption === "rock") {
-        setComputerChoiceClassName("computer-choice selected rock-choice");
-        resultMsg = "You Win";
-        setShowResult(true);
-      } else if (computerOption === "paper") {
-        setComputerChoiceClassName("computer-choice selected paper-choice");
-        resultMsg = "Draw";
-        setShowResult(true);
-      } else {
-        setComputerChoiceClassName("computer-choice selected scissors-choice");
-        resultMsg = "You Lose";
-        setShowResult(true);
-      }
-    } else if (userOption === "scissors") {
-      if (computerOption === "paper") {
-        setComputerChoiceClassName("computer-choice selected paper-choice");
-        resultMsg = "You Win";
-        setShowResult(true);
-      } else if (computerOption === "scissors") {
-        setComputerChoiceClassName("computer-choice selected scissors-choice");
-        resultMsg = "Draw";
-        setShowResult(true);
-      } else {
-        setComputerChoiceClassName("computer-choice selected rock-choice");
-        resultMsg = "You Loose";
-        setShowResult(true);
-      }
-    }
-  };
+  let computerElement = useRef(null);
 
+  // useEffect for calculating Result on each render after setTimout
   useEffect(() => {
-    if (userOption === "paper") {
-      setClassName("user-choice selected paper-choice");
-    } else if (userOption === "rock") {
-      setClassName("user-choice selected rock-choice");
-    } else if (userOption === "scissors") {
-      setClassName("user-choice selected scissors-choice");
-    }
-    computerChoice.current.classList.add("animate-options");
+    computerElement.current.classList.add('animate-options')
     setTimeout(() => {
-      computerChoice.current.classList.remove("animate-options");
-      calculateResult(userOption, generateComputerOption());
-    }, 2000);
-  }, [userOption]);
+      computerElement.current.classList.remove('animate-options')
+      disPatch(calculateResult())
+    }, 2000)
+  }, [disPatch])
 
   return (
     <div className="play-area">
       <div className="user-card">
         <p className="user-title">You Picked</p>
-        <div className={userClass}></div>
+        <div className={userChoice ? 'user-choice selected ' + userChoice + '-choice' : ' user-choice'} style={userWin ? winnerRing : {}}></div>
       </div>
 
-      {showResult ? (
+      {isResult ? (
         <div className="final-msg">
-          <p className="final-msg-title">{resultMsg}</p>
+          <p className="final-msg-title">{userWin ? 'You Win' : isDraw ? 'Draw' : 'You Loose'}</p>
           <button
             className="try-again"
             onClick={() => {
-              setInitialState(true);
-              setUserOption("");
+              disPatch(playAgain())
             }}
           >
             Play Again
@@ -107,9 +47,10 @@ function PlayArea({
       )}
 
       <div className="computer-card">
-        <p className="computer-title">Computer Picked</p>
-        <div className={computerClass} ref={computerChoice}></div>
+        <p className="computer-title">The House Picked</p>
+        <div className={computerChoice ? 'computer-choice selected ' + computerChoice + '-choice' : ' computer-choice'} ref={computerElement}></div>
       </div>
+      {userWin ? <Confetti /> : null}
     </div>
   );
 }
