@@ -26,7 +26,7 @@
   height: 200px;
   border-radius: 100%;
   background: rgb(0, 0, 0, 0.3);
-  box-shadow: inset 0px -8px 0px 0px rgba(0,0,0,.2);
+  box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .play-area .user-card .user-choice.selected {
@@ -36,7 +36,7 @@
   background-color: #fff;
 }
 
-.play-area .final-msg{
+.play-area .final-msg {
   transition: all 0.3s linear;
 }
 
@@ -61,8 +61,7 @@
   cursor: pointer;
 }
 
-
-.play-area .final-msg .try-again:hover{
+.play-area .final-msg .try-again:hover {
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -98,8 +97,10 @@
     background: #fff;
     background-position: center;
   }
+
   25% {
     background: url(../../Assets/icon-paper.svg) #fff no-repeat;
+    background-position: center;
     background-position: center;
   }
 
