@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactGame/static/css/main.35868603.css",
-    "main.js": "/ReactGame/static/js/main.3d98851f.js",
-    "static/js/787.96bf3be4.chunk.js": "/ReactGame/static/js/787.96bf3be4.chunk.js",
+    "main.css": "/ReactGame/static/css/main.3dec4fbf.css",
+    "main.js": "/ReactGame/static/js/main.21d2f40b.js",
     "static/media/logo.svg": "/ReactGame/static/media/logo.a4a2b39fefcdb6a1a8088c4dba8f3d93.svg",
     "static/media/image-rules.svg": "/ReactGame/static/media/image-rules.258b753fb6284dc8ae00c5b2fa7938c0.svg",
     "static/media/icon-paper.svg": "/ReactGame/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
@@ -10,13 +9,12 @@
     "index.html": "/ReactGame/index.html",
     "static/media/icon-rock.svg": "/ReactGame/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
     "static/media/icon-close.svg": "/ReactGame/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
-    "static/media/bg-triangle.svg": "/ReactGame/static/media/bg-triangle.77c6ca418d3751d8f71789234314a8b9.svg",
-    "main.35868603.css.map": "/ReactGame/static/css/main.35868603.css.map",
-    "main.3d98851f.js.map": "/ReactGame/static/js/main.3d98851f.js.map",
-    "787.96bf3be4.chunk.js.map": "/ReactGame/static/js/787.96bf3be4.chunk.js.map"
+    "static/media/bg-triangle.svg": "/ReactGame/static/media/bg-triangle.77c6ca418d3751d8f717.svg",
+    "main.3dec4fbf.css.map": "/ReactGame/static/css/main.3dec4fbf.css.map",
+    "main.21d2f40b.js.map": "/ReactGame/static/js/main.21d2f40b.js.map"
   },
   "entrypoints": [
-    "static/css/main.35868603.css",
-    "static/js/main.3d98851f.js"
+    "static/css/main.3dec4fbf.css",
+    "static/js/main.21d2f40b.js"
   ]
 }
