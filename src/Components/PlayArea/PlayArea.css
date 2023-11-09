@@ -1,12 +1,11 @@
 @import url("../../theme.css");
 
 .play-area {
-  margin: 60px 0;
+  margin: 60px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 80%;
-  margin-inline: auto;
+  max-width: 90%;
 }
 
 .play-area .user-card,
@@ -27,6 +26,7 @@
   height: 200px;
   border-radius: 100%;
   background: rgb(0, 0, 0, 0.3);
+  box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .play-area .user-card .user-choice.selected {
@@ -34,6 +34,10 @@
   align-items: center;
   justify-content: center;
   background-color: #fff;
+}
+
+.play-area .final-msg {
+  transition: all 0.3s linear;
 }
 
 .play-area .final-msg .final-msg-title {
@@ -55,6 +59,12 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+}
+
+.play-area .final-msg .try-again:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .play-area .user-card .user-choice.selected.paper-choice,
@@ -87,8 +97,10 @@
     background: #fff;
     background-position: center;
   }
+
   25% {
     background: url(../../Assets/icon-paper.svg) #fff no-repeat;
+    background-position: center;
     background-position: center;
   }
 
@@ -101,4 +113,11 @@
     background: url(../../Assets/icon-scissors.svg) #fff no-repeat;
     background-position: center;
   }
+}
+
+.winnerShadowRing {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -14px 0px 0px inset,
+    rgba(44, 59, 89, 0.2) 0px 0px 0px 4rem,
+    rgba(38, 53, 84, 0.3) 0px 0px 0px 8rem,
+    rgba(33, 48, 79, 0.3) 0px 0px 0px 12rem;
 }

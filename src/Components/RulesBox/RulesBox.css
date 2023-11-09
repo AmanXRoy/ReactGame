@@ -6,7 +6,7 @@
     inset: 0;
     z-index: 999;
     background: rgb(0, 0, 0, 0.4);
-
+    
 }
 .rules-box{
     background-color: #fff;
@@ -14,8 +14,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
     border-radius: 10px;
+    transform: translate(-50%,-50%);
 }
 
 
